@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPégate</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffe6f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffeb3b;
+      text-align: center;
+      padding: 1em;
+    }
+    header img {
+      width: 150px;
+    }
+    main {
+      padding: 2em;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #222;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.3em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1.5em;
+      padding: 0.7em 1.5em;
+      background-color: #fdd835;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #222;
+      color: white;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="autopegate-logo.png" alt="Logo AutoPégate">
+  </header>
+  <main>
+    <h1>¡Crea tu Sticker Personalizado!</h1>
+    <form action="/enviar" method="POST" enctype="multipart/form-data">
+      <label>Sube tu imagen:
+        <input type="file" name="imagen" accept="image/*" required>
+      </label>
+      <label>Estilo:
+        <select name="estilo" required>
+          <option value="recorte-blanco">Recorte fondo blanco</option>
+          <option value="fondo-transparente">Fondo transparente</option>
+          <option value="caricatura">Caricatura</option>
+        </select>
+      </label>
+      <label>Tamaño:
+        <select name="tamano" required>
+          <option value="chico">Chico</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </label>
+      <label>Cantidad:
+        <input type="number" name="cantidad" min="1" max="100" required>
+      </label>
+      <label>Texto adicional (opcional):
+        <input type="text" name="texto" maxlength="30">
+      </label>
+      <label>Dirección de envío:
+        <textarea name="direccion" rows="3" required></textarea>
+      </label>
+      <button type="submit">Pedir mi Sticker</button>
+    </form>
+  </main>
+  <footer>
+    &copy; 2025 AutoPégate - Hecho con ❤ en Valpo
+  </footer>
+</body>
+</html>
